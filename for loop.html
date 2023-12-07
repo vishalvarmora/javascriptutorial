@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<h1 id="allcar"></h1>
+
+<script>
+
+    //    let x = 1
+    //    console.log(x);
+    //    console.log(x++);
+    //    console.log(x);   
+
+    // for (let index = 0; index < array.length; index++) {
+    //     const element = array[index];
+        
+    // }
+
+    // let x = prompt("enter mark")
+    // console.log(x);
+
+    // for(let a = 0; a <= x; a++ ){
+        // console.log(a);
+    
+
+      const car = ["swift","bmw","ford","volvo"]
+      console.log(car);
+      console.log(car.length);
+
+      let text = "" 
+
+       
+     for (let index = 0; index < car.length; index++) {
+        text += car[index] + "<br>"
+     }   
+      document.getElementById("allcar").innerHTML = text
+
+</script>
+
+
+</body>
+</html>
