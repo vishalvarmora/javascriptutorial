@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .slider-img{
+        width: 1000px;
+        margin: 0 auto;
+    }
+    .slider-img img{
+        width: 1000px;
+    }
+</style>
+
+
+</head>
+
+<body>
+
+    <div class="slider">
+        <div class="slider-img"><img src="./img/cart1img.jpeg"alt=""></div>
+        <div class="slider-img"><img src="./img/cart2img.jpg" alt=""></div>
+        <div class="slider-img"><img src="./img/cart3img.jpg" alt=""></div>
+        <div class="slider-img"><img src="./img/cart4img.jpg" alt=""></div>
+        <div class="slider-img"><img src="./img/cart5img.jpg" alt=""></div>
+        <div class="slider-img"><img src="./img/cart6img.jpg" alt=""></div>
+    </div>
+
+    <script>
+        let SliderData = document.getElementsByClassName("slider-img") 
+        console.log(SliderData);
+        counter=0
+
+        function slider() {
+            for (let index = 0; index < SliderData.length; index++) {
+                console.log(SliderData[index]);
+                SliderData[index].style.display="none"            
+            }
+            if (counter >= SliderData.length) {
+                counter = 0
+            }
+            SliderData[counter].style.display="block"
+            counter++
+            setTimeout(slider, 2000);
+        }
+        slider()
+    </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
