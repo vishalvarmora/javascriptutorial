@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        form{
+            padding: 100px;
+        }
+        input{
+            width: 200px;
+            padding: 10px 20px;
+        }
+        .btn{
+            color: #fff;
+            background-color: black;
+            padding: 10px 20px;
+            display: block;
+            margin: 0 auto;
+        }
+        p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+<form action="#" onclick="sub()">
+    <div>
+        <!-- <label for="your-name">your-name</label> -->
+        <input placeholder="Enter your username" type="text" id="your-name" value="" required >
+        <p id="p1"></p>
+    </div>
+
+    <div>
+        <!-- <label for="your-email">email</label> -->
+        <input placeholder="Enter your email" type="email" id="your-email"  required >
+        <p id="p2"></p>
+    </div>
+
+    <div>
+        <!-- <label for="your-password">password</label> -->
+        <input placeholder="Enter your password" type="password" id="your-password"  required >
+        <p id="p3"></p>
+    </div>
+
+    <div>
+        <!-- <label for="confirm-password">confirm-password</label> -->
+        <input placeholder="Enter your confirm-password" type="password" id="confirm-password"  required >
+        <p id="p4"></p>
+    </div>
+
+     <div>
+        <button class="btn">Register</button>
+     </div>
+
+</form>
+
+<script>
+
+let yname = document.getElementById('your-name')
+let yemail = document.getElementById('your-email')
+let ypassword = document.getElementById('your-password')
+let yconfirmpassword = document.getElementById('confirm-password')
+var para1 = document.getElementById('p1')
+let para2 = document.getElementById('p2')
+let para3 = document.getElementById('p3')
+let para4 = document.getElementById('p4')
+let para5 = document.getElementById('p5')
+
+function sub() {
+            var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        
+            if(yname.value === ""){
+                para1.innerHTML = 'This Field is required'
+                para1.style.color = 'red'   
+            }
+            else{
+                para1.innerHTML = 'Done' 
+                console.log(yname.value);  
+                para1.style.color = 'green'   
+                
+            }
+
+            if (yemail.value.length < 6 ){
+                para2.innerHTML = 'value must be more than 6 letters'
+                para2.style.color = "red"
+                event.preventDefault()
+            }
+            
+            else if (yemail.value != ''){
+                if (yemail.value.match(validRegex)){
+                    para2.innerHTML = 'valid email address'
+                    para2.style.color = "Green"
+                    event.preventDefault()
+                }
+             
+             else {
+                para2.innerHTML = 'not a valid email address'
+                event.preventDefault()
+             }
+
+            }
+
+            else {
+                para2.innerHTML = 'ok'
+            }
+
+            if (ypassword.value.length < 8){
+                para3.innerHTML = 'value must be more than 8 letters'
+                para3.style.color = "red"
+                event.preventDefault()
+            }
+
+            else if (yemail.value != ''){
+                if (ypassword.value.search(/[0-9]/) == -1 ){
+                    para3.innerHTML = 'include atleast 1 numeric value'
+                    event.preventDefault()
+                }
+             
+             else if (ypassword.value.search(/[A-Z]/) == -1 ) {
+                 para3.innerHTML = 'include atleast 1 uppercase character'
+                 event.preventDefault()
+                
+             }
+
+             else if (ypassword.value.search(/[a-z]/) == -1){
+                para3.innerHTML = 'include atleast 1 lowercase character'
+                event.preventDefault()
+             }
+
+             else if (ypassword.value.search(/[!\@\#\$\%\^\&\*]/) == -1) {
+                    para3.innerHTML = 'include atleast 1 special symbol from this (!,@,#,$,%,^,&,*)'
+                    event.preventDefault()
+            }
+              else {
+                para3.innerHTML = 'valid password'
+              }
+        }
+             
+            else {
+                para3 = innerHTML = ''
+            }
+
+            if (yconfirmpassword.value != ypassword.value){
+                para4.innerHTML = 'password not matches'
+                event.preventDefault()
+            }
+
+            else{
+                para4.innerHTML = 'password are match'
+                para4.style.color = "red"
+            }
+
+            // return false
+
+        }
+
+</script>
+
+</body>
+</html>
