@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .conteiner{
+            width: 700px;
+            margin: 200px auto;
+            background-color: gray;
+            padding: 50px 0;
+            /* text-align: center; */
+            font-size: 15px;
+        }
+        input{
+            padding: 10px 0;
+            margin: 10px;
+            width: 200px;
+        }
+        p{
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+<section>
+    <div class="conteiner">
+        <form  onsubmit="return myvalidtion()">
+          <table align="center">
+            <tr>
+                <td><label for="username">username</label></td>
+                <td><input type="text" placeholder="enter-your-username" id="username"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><p id="user-er"></p></td>
+            </tr>
+            <tr>
+                <td><label for="password">password</label></td>
+                <td><input type="password" placeholder="enter-your-password" id="password"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><p id="passer"></p></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="login"></td>
+            </tr>
+          </table>
+        </form>
+    </div>
+</section>
+
+<script>
+
+
+let username = document.getElementById("username")
+let password = document.getElementById("password")
+let userer = document.getElementById("user-er")
+let passer = document.getElementById("passer")
+
+// document.getElementById("username").addEventListener("blur",myfunction)
+// function myfunction(){
+//     userer.innerHTML = "this field is req." 
+// }
+
+function  myvalidtion(){
+
+    if(username.value === ""){
+        userer.innerHTML = "enter your name"
+        event.preventDefault()
+    }
+
+    else{
+        userer.innerHTML = ""
+        console.log(username.value);
+        console.log(username.value.length);
+    }
+
+    if(password.value === ""){
+        passer.innerHTML = "enter your password"
+        event.preventDefault() 
+    }
+
+    else if(password.value.length < 8 ){
+        passer.innerHTML = "max 8 char"
+        event.preventDefault()
+    }
+
+    else{
+        passer.innerHTML = ""
+        console.log(password.value);
+        console.log(password.value.length);
+    }
+    return false
+}
+</script>
+</body>
+</html>
