@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+
+<script>
+
+class Form {
+    constructor(username,userpassword){
+        this.username = username
+        this.userpassword = userpassword
+    }
+    sayhello(){
+        alert("hello" + this.name)
+    }
+    sayhii(){
+        alert("hii" + this.name)
+    }
+    fil(givname){
+        this.name = givname
+    }
+     myfunction (){
+        alert("vishal varmora")
+    }
+}
+
+let vishal = new Form ("vishal",123)
+// vishal.fil("vishal")
+// vishal.sayhello()
+vishal.myfunction()
+
+console.log(vishal);
+
+let jay = new Form ("jay",123)
+jay.fil("jay")
+jay.sayhii()
+
+console.log(jay);
+
+
+
+</script>
+
+</body>
+</html>
