@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+class animal {
+    run(){
+        console.log(this.name +" is running");
+    }
+    fil(givname){
+        this.name = givname
+    }
+}
+
+class animal2 extends animal {
+    data(){
+        console.log( this.name + " data");
+    }
+    // fil(givname){
+    //     this.name = givname
+    // }
+}
+
+let cat = new animal()
+cat.fil("honey")
+cat.run()
+console.log(cat);
+
+let dog = new animal2() 
+dog.fil("tom")
+dog.run()
+dog.data()
+
+</script>
+</body>
+</html>
