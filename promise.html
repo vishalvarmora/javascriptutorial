@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- Promise is an  object that will produce a single value some time in the future -->
+    <!-- promise produce ave che = 1. resolved = .then() -->
+                              <!-- 2.rejected = .catch()  -->
+
+     <script>
+
+    let p = new Promise((resolve , reject)=>{
+        let a = 1 + 1
+        if(a === 2){
+            resolve("done")
+        }
+        else{
+            reject("fail")
+        }
+    }) 
+
+    // console.log(p);
+
+    p.then((vishal)=>{
+        console.log("this is" + vishal );
+    }).catch((vishal)=>{
+        console.log("this is" + vishal);
+    })
+
+     </script>
+
+
+
+</body>
+</html>
